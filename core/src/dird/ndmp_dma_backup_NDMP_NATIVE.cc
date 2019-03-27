@@ -142,7 +142,7 @@ int NdmpLoadNext(struct ndm_session* sess)
     }
 
     slot_number_t slotnumber = GetElementAddressByBareosSlotNumber(
-        &store->rss->storage_mapping, slot_type_storage, mr.Slot);
+        &store->runtime_storage_status->storage_mapping, slot_type_storage, mr.Slot);
     /* check for success */
     if (slotnumber < 0) {
       Jmsg(jcr, M_FATAL, 0, _("GetElementAddressByBareosSlotNumber failed\n"));
@@ -533,7 +533,7 @@ static inline bool extract_post_backup_stats_ndmp_native(
      */
 
     media->slot_addr = GetBareosSlotNumberByElementAddress(
-        &jcr->res.write_storage->rss->storage_mapping, slot_type_storage,
+        &jcr->res.write_storage->runtime_storage_status->storage_mapping, slot_type_storage,
         media->slot_addr);
 #if 0
       Jmsg(jcr, M_INFO, 0, _("Physical Slot is %d\n"), media->slot_addr);
