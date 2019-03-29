@@ -2633,6 +2633,7 @@ static void FiledFreeJcr(JobControlRecord* jcr)
   FreeBootstrap(jcr);
   FreeRunscripts(jcr->RunScripts);
   delete jcr->RunScripts;
+  jcr->RunScripts = nullptr;
 
   if (jcr->path_list) {
     FreePathList(jcr->path_list);
