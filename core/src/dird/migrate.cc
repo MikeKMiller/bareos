@@ -548,7 +548,7 @@ static int UniqueNameHandler(void* ctx, int num_fields, char** row)
   uitem* item;
 
   memset(new_item, 0, sizeof(uitem));
-  new_item->item = bstrdup(row[0]);
+  new_item->item = strdup(row[0]);
   Dmsg1(dbglevel, "Unique_name_hdlr Item=%s\n", row[0]);
 
   item = (uitem*)list->binary_insert((void*)new_item, ItemCompare);
