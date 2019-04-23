@@ -335,7 +335,6 @@ Compiling and locally installing Bareos
       -Dconfigtemplatedir=$DESTDIR/lib/defaultconfigs \
       -Dsbin-perm=755 \
       -Dpython=yes \
-      -Dsmartalloc=yes \
       -Ddisable-conio=yes \
       -Dreadline=yes \
       -Dbatch-insert=yes \
